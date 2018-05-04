@@ -10,16 +10,10 @@
 
     <?php
 
-    //Loop
-    //whileLoop
-    //Do While Loop
-    //For Loop
-    //For each Loop
     $array = array('Daniel','Jane','Jacob');
 
-    foreach ($array as $loopdata) {
-      echo "My name is ".$loopdata."<br>";
-    }
+      echo $array[0];
+
     ?>
 
   </body>
