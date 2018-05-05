@@ -11,12 +11,12 @@
     <?php
     $x = 5;
 
-    function something($x){
+    function something(){
       $y = 10;
       echo $GLOBALS['x'];
     }
 
-
+    something();
     ?>
 
   </body>
