@@ -1,36 +1,31 @@
 <?php
-session_start();
-
- ?>
-
+// Connecting database
+include_once "includes/dbh.inc.php"
+?>
+<!-- HTML Document -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
 <title>Title of the document</title>
-<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
   <body>
-
-    <ul>
-      <li><a href="index.php">HOME</a></li>
-      <li><a href="contact.php"</a>CONTACT</li>
-    </ul>
-  </body>
-
+<!-- SQL Query -->
 <?php
+$sql = "SELECT * FROM users;";
+$result = mysqli_query($conn, $sql);
+$result_check = mysqli_num_rows($result);
 
+if ($result_check>0) {
+  while ($row = mysqli_fetch_assoc($result)) {
+    echo $row['user_email'] . " " . $row['user_pwd'] . "<br>";
+  }
 
-$_SESSION['username']= "dani948a";
-echo $_SESSION['username'];
-
-if (!isset($_SESSION['username'])) {
-  echo "You are not logged in";
+  
 }
-else {
-  echo "You are logged in";
-}
- ?>
+?>
+
+
+  </body>
 
 </html>
